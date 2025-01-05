@@ -1,0 +1,12 @@
+com/kaleert/chattynukkit/ChatListener.class
+com/kaleert/chattynukkit/ToggleNotificationCommand.class
+com/kaleert/chattynukkit/ClearChatCommand.class
+com/kaleert/chattynukkit/ChattyCommand.class
+com/kaleert/chattynukkit/ChattyNukkit.class
+com/kaleert/chattynukkit/VanillaMessagesListener.class
+com/kaleert/chattynukkit/NotificationManager$3.class
+com/kaleert/chattynukkit/SpyCommand.class
+com/kaleert/chattynukkit/PrivateMessageCommand.class
+com/kaleert/chattynukkit/NotificationManager$2.class
+com/kaleert/chattynukkit/NotificationManager.class
+com/kaleert/chattynukkit/NotificationManager$1.class

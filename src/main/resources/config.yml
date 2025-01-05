@@ -1,0 +1,197 @@
+#Благодаою вас за установку моего плагина ^-^
+    #by Kaleert
+
+language: "eng" # Доступные опции: rus, eng. 
+#P.s.: Вы можете создать файл формате %имя%.yml в папке locale указать его имя здесь и настроить сообщения под себя
+
+enable-see-permission: false
+
+chats:
+  local:
+    enable: true
+    display-name: 'Local'
+    prefix: '§a§lL §8|'  # Добавляем префикс чата
+    range: 100 #радиус
+    cooldown: -1 #задержка, -1 - без задержки
+    command: 'localchat'
+    aliases: [ 'lchat' ]
+    permission: 'chat.local'
+    spy-permission: 'chat.spy.local'
+
+  global:
+    enable: true
+    display-name: 'Global'
+    prefix: '§c§lG §8|'
+    range: -1
+    symbol: '!'
+    cooldown: -1
+    command: 'globalchat'
+    aliases: [ 'gchat' ]
+    permission: 'chat.global'
+
+  notify:
+    enable: true
+    prefix: '§7[Увед.]'
+    range: -3
+    symbol: '$'
+    cooldown: -1
+    permission: 'chat.notify'
+    
+    #по аналогии можно добавить и свои чаты, например:
+  custom:
+    enable: false
+    display-name: 'Custom'
+    prefix: '§l§6(§l§eCUSTOM§6§l)'
+    range: -1
+    symbol: '.'
+    cooldown: -1
+    command: 'customchat'
+    aliases: [ 'custchat' ]
+    permission: 'chat.custom'
+
+#команды
+commands:
+  spy:
+    enable: true
+    aliases:
+      - "spy"
+      - "sh"
+
+  chatignore:
+    enable: true
+    aliases:
+      - "chatignore"
+      - "cignore"
+      - "togglenotifications"
+
+  dm:
+    enable: true
+    aliases:
+      - "msg"
+      - "tell"
+      - "whisper"
+  
+  clearchat:
+    enable: true
+    aliases:
+      - "cc"
+      - "clearc"
+      - "clearchat"
+      
+spy:
+  prefix: "§1(§b§lSpy§l§1)"
+  format: "%chat_prefix% §r%player%§6: §e%message%"
+  dmformat: "%chat_prefix%  §6§ldm: от %from% для %to%§6: §e%message%"
+
+dm:
+  format: "§6[ЛС] §6§lОт %from% для %to%: §r%message%"
+
+#модерация сообщений
+moderation:
+  caps:
+    # Включение / отключение защиты от капсов.
+    # Разрешение для обхода: chatty.moderation.bypass.caps
+    enable: true
+
+    # Минимальная длина сообщения для проверки капсов.
+    length: 6
+
+    # Минимальный процент заглавных букв для капсов.
+    percent: 80
+
+    # Включение / отключение блокировки сообщений с капсами.
+    # Если false, сообщение будет отправлено в нижнем регистре.
+    block: true
+
+  advertisement:
+    # Включение / отключение защиты от рекламы.
+    # Разрешение для обхода: chatty.moderation.bypass.advertisement
+    enable: true
+    whitelist:
+      - "example.com"
+      - "vk.com/kaleert"
+      - "192.168.0.1"
+      - "192.168.1.128"
+      
+    # Включение / отключение блокировки рекламных сообщений.
+    # Если false, реклама не будет блокироваться.
+    block: true
+
+  badwords:
+    # Включение / отключение фильтрации запрещенных слов.
+    # Разрешение для обхода: chatty.moderation.bypass.badwords
+    enable: true
+
+    # Список запрещенных слов.
+    words:
+      - 'плохое_слово1'
+      - 'плохое_слово2'
+    
+#уведомления
+notifications:
+  # Chat notifications.
+  chat:
+    enable: true
+    lists:
+      default:
+        time: 60
+        prefix: ''
+        messages:
+          - |
+            §cWelcome to the server!
+            §aEnjoy your stay!
+          - '§aVisit our website: example.com'
+        permission: false
+        random: true
+
+  # ActionBar notifications.
+  actionbar:
+    enable: true
+    time: 60
+    prefix: ''
+    messages:
+      - '§cWelcome to the server!'
+      - '§aEnjoy your stay!'
+    permission: false
+    random: false
+
+  # Title notifications.
+  title:
+    enable: true
+    lists:
+      default:
+        time: 60
+        messages:
+          - |
+            §cWelcome to the server!
+            §eOur website: example.com
+          - '§aEnjoy your stay!'
+        permission: false
+        random: true
+        
+#настройка сообщений       
+vanilla:
+  join:
+    enable: true
+    message: '§8> §r%prefix% §r%player% §ejoined the server.'
+    permission: false
+
+    first-join:
+      message: '§8> §r%prefix% §r%player% §6joined the server for the first time!'
+
+  quit:
+    enable: true
+    message: '§8> §r%prefix% §r%player% §eleft the server.'
+    permission: false
+
+  death:
+    enable: true
+    killed_by_message: "§8> §r%prefix% §r%player% §eубит %killer%."
+    message: "§8> §r%prefix% §r%player% §eумер."
+        
+#настройка форматирования чата для групп
+groups:
+  default: "%chat_prefix% §f%prefix% §f%player%: §f%message%"
+  # Конкретные группы могут быть указаны здесь:
+  # admin: "%chat_prefix% §c[Admin] §f%player%: §c%message%"
+  # st_admin: admin # st_admin будет использовать формат группы admin

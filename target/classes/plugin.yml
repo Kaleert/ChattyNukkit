@@ -1,0 +1,72 @@
+name: Chatty
+main: com.kaleert.chattynukkit.ChattyNukkit
+version: 1.0
+api: [1.0.0]
+author: kaleert
+permissions:
+  chatty.moderation.*:
+    description: Bypass permission for all filters
+    default: op
+  chat.*:
+    description: Allows to write to all chats
+    default: op
+    
+  chat.see.*:
+    description: allows to see all chats
+    default: op
+    
+  chatty.command.msg:
+    description: Allows the player to send private messages with /msg.
+    default: true
+
+  chatty.command.spy:
+    description: Allows the player to use the /spy command.
+    default: op
+
+  chatty.command.chatignore:
+    description: Allows the player to ignore messages from specific chats.
+    default: op
+
+  chatty.command.clearchat:
+    description: Allows the player to clear the chat with /clearchat.
+    default: op
+
+  chatty.misc.joinmessage:
+    description: Allows the player to see join messages in chat.
+    default: true
+
+  chatty.misc.quitmessage:
+    description: Allows the player to see quit messages in chat.
+    default: true
+
+  chatty.misc.deathmessage:
+    description: Allows the player to see death messages in chat.
+    default: true
+
+  chatty.notification.chat.default:
+    description: Allows the player to receive default chat notifications.
+    default: true
+
+  chatty.notification.actionbar:
+    description: Allows the player to receive ActionBar notifications.
+    default: true
+
+  chatty.notification.title.default:
+    description: Allows the player to receive title notifications.
+    default: true
+
+  chatty.moderation.bypass.caps:
+    description: Bypass permission for caps protection.
+    default: op
+
+  chatty.moderation.bypass.advertisement:
+    description: Bypass permission for advertisement protection.
+    default: op
+
+  chatty.moderation.bypass.badwords:
+    description: Bypass permission for bad words filtering.
+    default: op
+
+  chatty.moderation.allowLinks:
+    description: Allows the player to send links in chat.
+    default: true
